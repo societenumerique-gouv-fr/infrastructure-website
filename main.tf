@@ -29,7 +29,7 @@ variable "DEFAULT_PROJECT_ID" {
   description = "Project ID where your resources will be created"
 }
 
-variable "STRAPI_API_URL" {
+variable "NEXT_PUBLIC_STRAPI_URL" {
   type        = string
   description = "URL of the Strapi API serving data to display"
 }
@@ -61,7 +61,7 @@ resource "scaleway_container" "main" {
   deploy          = true
 
   environment_variables = {
-    "STRAPI_API_URL" = var.STRAPI_API_URL,
+    "NEXT_PUBLIC_STRAPI_URL" = var.NEXT_PUBLIC_STRAPI_URL,
   }
   secret_environment_variables = {
   }
