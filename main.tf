@@ -1,7 +1,7 @@
 terraform {
   backend "remote" {
     hostname     = "app.terraform.io"
-    organization = "societe-numerique"
+    organization = "societenumerique"
 
     workspaces {
       prefix = "website-"
@@ -19,19 +19,19 @@ terraform {
   required_version = ">= 0.13"
 }
 
-variable "REGISTRY_ENDPOINT" {
+variable "NEXT_PUBLIC_STRAPI_URL" {
   type        = string
-  description = "Container Registry endpoint where your application container is stored"
+  description = "URL of the Strapi API serving data to display"
 }
 
-variable "DEFAULT_PROJECT_ID" {
+variable "PROJECT_ID" {
   type        = string
   description = "Project ID where your resources will be created"
 }
 
-variable "NEXT_PUBLIC_STRAPI_URL" {
+variable "REGISTRY_ENDPOINT" {
   type        = string
-  description = "URL of the Strapi API serving data to display"
+  description = "Container Registry endpoint where your application container is stored"
 }
 
 locals {
@@ -41,7 +41,7 @@ locals {
 resource "scaleway_container_namespace" "main" {
   name        = local.appName
   description = "Namespace created for serverless Website deployment"
-  project_id  = var.DEFAULT_PROJECT_ID
+  project_id  = var.PROJECT_ID
 }
 
 resource "scaleway_container" "main" {
