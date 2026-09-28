@@ -105,7 +105,6 @@ Simply push the changes to the `main` branch, to apply the next state of the inf
   - Workspaces : `website-*`
     - [website-production](https://app.terraform.io/app/societe-numerique/workspaces/website-production)
     - Variables:
-      - `NEXT_PUBLIC_STRAPI_URL` `terraform` The root url of the Content Management system, you can get this value in the outputs of [infrastructure-content-management-system](https://github.com/societenumerique-gouv-fr/infrastructure-content-management-system) terraform run outputs
       - `PROJECT_ID` `terraform` Scaleway project id: [available in Societe Numerique project dashboard settings](https://console.scaleway.com/project/settings)
       - `REGISTRY_ENDPOINT` `terraform` Scaleway registry endpoint: get the endpoint after [creating docker registry and push the initial image](#create-docker-registry-and-push-the-initial-image)
       - `SCW_ACCESS_KEY` `env` Scaleway access key: [generate API key for your user](https://console.scaleway.com/iam/users)
